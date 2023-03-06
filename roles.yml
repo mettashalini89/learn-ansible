@@ -1,0 +1,4 @@
+- name: Roles and Role level variables
+  hosts: localhost
+  roles:
+    - demo

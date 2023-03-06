@@ -48,14 +48,14 @@
   tasks:
     - name: Register a Variable
       ansible.builtin.shell: uptime
-      register: out
+      register: out  #Register is to save/register the output
 
     - name: Print out
       ansible.builtin.debug:
         msg: "{{ out }}"
 
     - name: Declare variable
-      ansible.builtin.set_fact:
+      ansible.builtin.set_fact:  #declare a vriable using set_fact
         status: "{{ out.rc  }}"
 
     - name: Print status
