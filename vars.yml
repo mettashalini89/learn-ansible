@@ -26,7 +26,7 @@
         msg: url= {{ url }}   #accessing a variable
 
 - name: Play Variables from Inventory
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Play Variable from Inventory
       ansible.builtin.debug:
