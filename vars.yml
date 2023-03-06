@@ -42,3 +42,14 @@
     - name: Play Variable from Inventory
       ansible.builtin.debug:
         msg: "url= {{ url }}, Hostname of server= {{ansible_hostname}}" #ansible has some pre defined variable eg: ansible_hostname and we no need to declare them
+
+- name: Register a Variable
+  hosts: localhost
+  tasks:
+    - name: Register a Variable
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: Print out
+      ansible.builtin.debug:
+        msg: {{ out }}
