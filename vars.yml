@@ -52,4 +52,4 @@
 
     - name: Print out
       ansible.builtin.debug:
-        msg: {{ out }}
+        msg: "{{ out }}"
