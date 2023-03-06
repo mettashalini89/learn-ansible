@@ -31,3 +31,14 @@
     - name: Play Variable from Inventory
       ansible.builtin.debug:
         msg: url= {{ url }}   #accessing a variable
+
+
+##we can also declare variable from cmd line(CLI) by adding it to cmd
+##Variable precedence: cli variable, task level variables, variables from file, play level variable, inventory variables
+
+- name: Play Variables of Predefined Ansible Variable
+  hosts: all
+  tasks:
+    - name: Play Variable from Inventory
+      ansible.builtin.debug:
+        msg: "url= {{ url }}, Hostname of server= {{ansible_hostname}}" #ansible has some pre defined variable eg: ansible_hostname and we no need to declare them
