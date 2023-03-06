@@ -6,3 +6,21 @@
     - name: Play Variable Example
       ansible.builtin.debug:
         msg: url= {{ url }}   #accessing a variable
+
+- name: Play Variables from file
+  hosts: localhost
+  vars_files:          #declaring a variable and vars_file can only accessible at play level
+    - var.yml
+  tasks:
+    - name: Play Variable Example from File
+      ansible.builtin.debug:
+        msg: url= {{ url }}   #accessing a variable
+
+- name: Play Variables Task Level
+  hosts: localhost
+  tasks:
+    - name: Play Variable Example
+      vars:
+        url: play.example.com  #Task level variables can only accessible in this task but not for other tasks
+      ansible.builtin.debug:
+        msg: url= {{ url }}   #accessing a variable
