@@ -12,3 +12,11 @@
         - Apple
         - banana
         - coconut
+
+    - name: Print multiple fruit names with quantity
+      debug:
+        msg: fruit name - {{ item.name }} and quantity is {{ item.quantity }}
+      loop:
+        - { name: "Apple", quantity: 10 }
+        - { name: "Banana", quantity: 11 }
+        - { name: "Coconut", quantity: 15 }
