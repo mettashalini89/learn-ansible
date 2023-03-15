@@ -4,3 +4,11 @@
     - name: Print fruit name
       debug:
         msg: fruit name - Apple
+
+    - name: Print multiple fruit names using loop
+      debug:
+        msg: fruit name - {{ item }} #item is default, here used to call the fruit names in loop
+      loop:
+        - Apple
+        - banana
+        - coconut
